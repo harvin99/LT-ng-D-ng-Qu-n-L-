@@ -1,0 +1,201 @@
+﻿<Window x:Class="DA_LTUD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DA_LTUD"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="725" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:StatusInvoiceConverter x:Key="converter"/>
+    </Window.Resources>
+    <Grid Background="AliceBlue">
+        <TabControl TabStripPlacement="Left" >
+            <TabControl.ItemContainerStyle>
+                <Style TargetType="{x:Type TabItem}">
+                    <Setter Property="HorizontalAlignment" Value="Left"/>
+                </Style>
+            </TabControl.ItemContainerStyle>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Width="90">
+                        <Image Source="Images/Employer.png" Height="20"   RenderOptions.BitmapScalingMode="NearestNeighbor"></Image>
+                        <TextBlock Text="Nhân Viên" Margin="2,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <DockPanel>
+                    <Label DockPanel.Dock="Top" Background="AliceBlue" BorderThickness="0 0 0 1" BorderBrush="White">Quản lý nhân viên</Label>
+                    <ToolBar DockPanel.Dock="Top" BorderThickness="0 0 0 1" BorderBrush="White">
+                        <Button>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Images\Method.png" Width="20" Height="20"></Image>
+                                <TextBlock VerticalAlignment="Center">Nhập</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Separator />
+                        <Button Name="btimprot_NV" Click="btimprot_NV_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Images\Excel.png" Width="20" Height="20"></Image>
+                                <TextBlock VerticalAlignment="Center">Import</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Separator />
+                        <Button>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Images\Save.png" Width="20" Height="20"></Image>
+                                <TextBlock VerticalAlignment="Center">Save</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Separator />
+                        <Button>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Images\Refresh.png" Width="20" Height="20"></Image>
+                                <TextBlock VerticalAlignment="Center">Refresh</TextBlock>
+                            </StackPanel>
+                        </Button>
+                    </ToolBar>
+                    <StackPanel DockPanel.Dock="Bottom" Height="25">
+                        <Label Background="AliceBlue">Tổng Nhân Viên:</Label>
+                        <TextBlock></TextBlock>
+                    </StackPanel>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <TextBlock VerticalAlignment="Center">Search by:</TextBlock>
+                            <TextBox Width="200"></TextBox>
+                        </StackPanel>
+                        <DataGrid Name="employmentListView" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Mã Nhân Viên" Binding="{Binding Name}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Tên" Binding="{Binding Name}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Ngày Sinh" Binding="{Binding Name}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Địa Chỉ" Binding="{Binding Name}"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </DockPanel>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Width="90">
+                        <Image Source="Images\product.png" Height="20"></Image>
+                        <TextBlock Text="Sản Phẩm" Margin="2,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <DockPanel>
+                    <Label DockPanel.Dock="Top" Background="AliceBlue" BorderThickness="0 0 0 1" BorderBrush="White">Quản lý Sản Phẩm</Label>
+                    <ToolBar DockPanel.Dock="Top" BorderThickness="0 0 0 1" BorderBrush="White">
+                        <Button Name="btinsert" Click="btinsert_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Images\Method.png" Width="20" Height="20"></Image>
+                                <TextBlock VerticalAlignment="Center">Nhập</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Separator />
+                        <Button Name="btimprot_SP" Click="btimprot_SP_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Images\Excel.png" Width="20" Height="20"></Image>
+                                <TextBlock Name="btnImport" VerticalAlignment="Center">Import</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Separator />
+                        <Button>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Images\Save.png" Width="20" Height="20"></Image>
+                                <TextBlock VerticalAlignment="Center">Save</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Separator />
+                        <Button>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Images\Refresh.png" Width="20" Height="20"></Image>
+                                <TextBlock VerticalAlignment="Center">Refresh</TextBlock>
+                            </StackPanel>
+                        </Button>
+                    </ToolBar>
+                    <StackPanel Background="AliceBlue" DockPanel.Dock="Bottom" Height="25" Orientation="Horizontal">
+                        <Label>Tổng Sản Phẩm:</Label>
+                        <TextBlock Name="tbCountSp" VerticalAlignment="Center"></TextBlock>
+                    </StackPanel>
+                    <DockPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Top">
+                            <TextBlock VerticalAlignment="Center" Background="AliceBlue">Search by Name:</TextBlock>
+                            <TextBox Name="tbfilter_productname" Width="200" TextChanged="tbfilter_productname_TextChanged"></TextBox>
+                        </StackPanel>
+                        <Grid>
+                            <DataGrid Name="productdatagrid" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Mã Sản Phẩm" Binding="{Binding Id}" Width="*"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Tên" Binding="{Binding Name}" Width="*"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Giá($/kg)" Binding="{Binding Gia}" Width="*"></DataGridTextColumn>
+                                </DataGrid.Columns>
+                                <DataGrid.RowStyle>
+                                    <Style TargetType="DataGridRow">
+                                        <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+                                    </Style>
+                                </DataGrid.RowStyle>
+                            </DataGrid>
+                        </Grid>
+                    </DockPanel>
+                </DockPanel>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Width="90">
+                        <Image Source="Images\oder.png" Height="20"   RenderOptions.BitmapScalingMode="NearestNeighbor"></Image>
+                        <TextBlock Text="Hóa Đơn" Margin="2,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <DockPanel>
+                    <Label DockPanel.Dock="Top" Background="AliceBlue" BorderThickness="0 0 0 1" BorderBrush="White">Quản lý hóa đơn</Label>
+                    <ToolBar DockPanel.Dock="Top" BorderThickness="0 0 0 1" BorderBrush="White">
+                        <Button Name="btnNhapHD" Click="btnNhapHD_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Images\Method.png" Width="20" Height="20"></Image>
+                                <TextBlock VerticalAlignment="Center">Nhập</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Separator />
+                        <Button Name="btimprot_HD" Click="btimprot_HD_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Images\Excel.png" Width="20" Height="20"></Image>
+                                <TextBlock VerticalAlignment="Center">Import</TextBlock>
+                            </StackPanel>
+                        </Button>
+                    </ToolBar>
+                    <StackPanel DockPanel.Dock="Bottom" Height="25">
+                        <Label Background="AliceBlue">Tổng Nhân Viên:</Label>
+                        <TextBlock></TextBlock>
+                    </StackPanel>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <TextBlock VerticalAlignment="Center">Search by Id:</TextBlock>
+                            <TextBox Name="tbfilter_idinvoice" TextChanged="tbfilter_idinvoice_TextChanged" Width="200"></TextBox>
+                        </StackPanel>
+                        <DataGrid Name="billListView" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True">
+                            <DataGrid.RowStyle>
+                                <Style TargetType="DataGridRow">
+                                    <EventSetter Event="MouseDoubleClick" Handler="billListView_MouseDoubleClick"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding IdStatus}" Value="3">
+                                            <Setter Property="Background" Value="Red"></Setter>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding IdStatus}" Value="2">
+                                            <Setter Property="Background" Value="SpringGreen"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.RowStyle>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Mã Hóa Đơn" Binding="{Binding Id}" Width="*"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Ngày Đặt" Binding="{Binding NgayTao}"  Width="*"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Tổng Tiền" Binding="{Binding TongTien}"  Width="*"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Tình Trạng" Binding="{Binding IdStatus,Converter={StaticResource converter}}"  Width="*"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                            
+                        </DataGrid>
+                    </StackPanel>
+                </DockPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

@@ -1,0 +1,132 @@
+﻿<Window x:Class="DA_LTUD.EditHD"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DA_LTUD"
+        mc:Ignorable="d"
+        Title="EditHD" Height="400" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:StatusInvoiceConverter x:Key="converter"/>
+    </Window.Resources>
+    <DockPanel Background="AliceBlue">
+        <Label FontSize="20" HorizontalAlignment="Center" DockPanel.Dock="Top">Thông Tin Hóa Đơn</Label>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+            <Button Name="btapply" Margin="5" Padding="5" Click="btadd_Click" IsEnabled="False">Apply</Button>
+            <Button Name="btedit" Margin="5" Padding="5" Click="btedit_Click">Edit</Button>
+            <Button Name="btdelete" Margin="5" Padding="5" Click="btdelete_Click">Delete</Button>
+        </StackPanel>
+        <StackPanel>
+            <StackPanel Name="stackpanelshow" VerticalAlignment="Center" HorizontalAlignment="Center" Height="270">
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <TextBlock>Tên Khách Hàng:</TextBlock>
+                    <TextBlock Text="{Binding TenKH}"></TextBlock>
+                    <TextBlock Margin="10, 0, 0, 0">Địa Chỉ:</TextBlock>
+                    <TextBlock Text="{Binding DiaChiKH}"></TextBlock>
+                    <TextBlock Margin="10, 0, 0, 0">SĐT:</TextBlock>
+                    <TextBlock Text="{Binding SDT}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <TextBlock>Ngày Đặt:</TextBlock>
+                    <TextBlock Width="150" Text="{Binding NgayTao}"></TextBlock>
+                    <TextBlock>Tình Trạng:</TextBlock>
+                    <TextBlock Width="100" Text="{Binding IdStatus,Converter={StaticResource converter}}"></TextBlock>
+                </StackPanel>
+                <DockPanel Height="200">
+                    <DockPanel DockPanel.Dock="Right" Margin="10">
+                        <TextBlock DockPanel.Dock="Top">Giỏ Hàng</TextBlock>
+                        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+                            <TextBlock>Tổng Tiền Hóa Đơn:</TextBlock>
+                            <TextBlock Text="{Binding TongTien}"></TextBlock>
+                        </StackPanel>
+                        <DataGrid Width="500" Height="140" Name="datagridgiohang" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Mã Sản Phẩm" Binding="{Binding IdProduct}" Width="*" IsReadOnly="True"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Giá($/kg)" Binding="{Binding GiaBan}" Width="*" IsReadOnly="True"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Số Lượng" Binding="{Binding SoLuong,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="*" IsReadOnly="True"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Tổng Giá" Binding="{Binding TongTien}" Width="*" IsReadOnly="True"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DockPanel>
+                </DockPanel>
+            </StackPanel>
+            <StackPanel Name="stackpaneledit" VerticalAlignment="Center" HorizontalAlignment="Center" Height="0">
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <TextBlock>Tên Khách Hàng:</TextBlock>
+                    <TextBox Name="tbtenkh" Width="150"></TextBox>
+                    <TextBlock>Địa Chỉ:</TextBlock>
+                    <TextBox Name ="tbdiachi" Width="150"></TextBox>
+                    <TextBlock>SĐT:</TextBlock>
+                    <TextBox Name ="tbsdt" Width="150"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <TextBlock>Ngày Đặt:</TextBlock>
+                    <TextBlock Name="tblngaydat" Width="150"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Tình Trạng:</TextBlock>
+                        <RadioButton Name="rbtnchuagiao">Chưa Giao</RadioButton>
+                        <RadioButton Name="rbtndagiao">Đã Giao</RadioButton>
+                        <RadioButton Name="rbtndahuy">Đã Hủy</RadioButton>
+                    </StackPanel>
+                </StackPanel>
+                <DockPanel Height="183">
+                    <DockPanel DockPanel.Dock="Left" Margin="10">
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock HorizontalAlignment="Left">Sản Phẩm</TextBlock>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <TextBlock>Search by Name</TextBlock>
+                                <TextBox Width="100" Name="tbfilterproduct" ></TextBox>
+                            </StackPanel>
+                        </DockPanel>
+                        <DataGrid Width="300" Name="datagridsp" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Mã SP" Binding="{Binding Id}" Width="*"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Tên" Binding="{Binding Name}" Width="*"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Giá($/kg)" Binding="{Binding Gia}" Width="*"></DataGridTextColumn>
+                                <DataGridTemplateColumn Width="0.5*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button BorderThickness="0" Background="White" Name="addproduct" Click="addproduct_Click">
+                                                <Image Source="Images\giohang.png" Width="25" Height="25" RenderOptions.BitmapScalingMode="NearestNeighbor"></Image>
+                                            </Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Right" Margin="10">
+                        <TextBlock DockPanel.Dock="Top">Giỏ Hàng</TextBlock>
+                        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+                            <TextBlock>Tổng Tiền Hóa Đơn:</TextBlock>
+                            <TextBlock Name="tbltongtienhoadon"></TextBlock>
+                        </StackPanel>
+                        <DataGrid Width="370" Name="datagridgihang" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Mã Sản Phẩm" Binding="{Binding IdProduct}" Width="*" IsReadOnly="True"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Giá($/kg)" Binding="{Binding GiaBan}" Width="*" IsReadOnly="True"></DataGridTextColumn>
+                                <DataGridTemplateColumn Header="Số Lượng" Width="*">
+                                    <DataGridTemplateColumn.CellTemplate >
+                                        <DataTemplate >
+                                            <TextBox Name="tbSL" TextChanged="tbSL_TextChanged" Text="{Binding Path=SoLuong,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Header="Tổng Giá" Binding="{Binding TongTien}" Width="*" IsReadOnly="True"></DataGridTextColumn>
+                                <DataGridTemplateColumn Width="0.5*">
+                                    <DataGridTemplateColumn.CellTemplate >
+                                        <DataTemplate >
+                                            <Button BorderThickness="0" Background="White" Name="btndeleteCT" Click="btndeleteCT_Click">
+                                                <Image Source="Images\delete.png" Height="17" Width="17"></Image>
+                                            </Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DockPanel>
+                </DockPanel>
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>

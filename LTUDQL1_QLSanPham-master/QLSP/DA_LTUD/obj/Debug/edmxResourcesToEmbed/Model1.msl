@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QuanLySanPhamDBModelStoreContainer" CdmEntityContainer="QuanLySanPhamDBEntities">
+    <EntitySetMapping Name="SanPhams">
+      <EntityTypeMapping TypeName="QuanLySanPhamDBModel.SanPham">
+        <MappingFragment StoreEntitySet="SanPham">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="GiaTien" ColumnName="GiaTien" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_SuaSanPham" FunctionName="QuanLySanPhamDBModel.Store.sp_SuaSanPham" />
+    <FunctionImportMapping FunctionImportName="sp_ThemSanPham" FunctionName="QuanLySanPhamDBModel.Store.sp_ThemSanPham" />
+    <FunctionImportMapping FunctionImportName="sp_TimKiemSanPhamTheoTen" FunctionName="QuanLySanPhamDBModel.Store.sp_TimKiemSanPhamTheoTen">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLySanPhamDBModel.sp_TimKiemSanPhamTheoTen_Result">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="GiaTien" ColumnName="GiaTien" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_XoaSanPham" FunctionName="QuanLySanPhamDBModel.Store.sp_XoaSanPham" />
+    <FunctionImportMapping FunctionImportName="sp_XuatDanhSachSanPham" FunctionName="QuanLySanPhamDBModel.Store.sp_XuatDanhSachSanPham">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLySanPhamDBModel.sp_XuatDanhSachSanPham_Result">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="GiaTien" ColumnName="GiaTien" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

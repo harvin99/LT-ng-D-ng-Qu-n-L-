@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a68a7c313dab468586ae218b05c9e0fc" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyNongSanDBModel.Product" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyNongSanDBModel.Invoice" Width="1.5" PointX="5.625" PointY="1" />
+        <EntityTypeShape EntityType="QuanLyNongSanDBModel.InvoiceStatu" Width="1.5" PointX="3.375" PointY="1.5" />
+        <AssociationConnector Association="QuanLyNongSanDBModel.FK_Invoice_ToTable" />
+        <EntityTypeShape EntityType="QuanLyNongSanDBModel.InvoiceDetail" Width="1.5" PointX="7.875" PointY="1.125" />
+        <AssociationConnector Association="QuanLyNongSanDBModel.FK_InvoiceDetail_ToTable" />
+        <AssociationConnector Association="QuanLyNongSanDBModel.FK_InvoiceDetail_ToTable_1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

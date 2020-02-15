@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLySanPhamDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="MaSP" />
+      <PropertyRef Name="TenSP" />
+      <PropertyRef Name="GiaTien" />
+      <PropertyRef Name="SoLuong" />
+      <PropertyRef Name="DonViTinh" />
+    </Key>
+    <Property Name="MaSP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GiaTien" Type="Single" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="DonViTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="QuanLySanPhamDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
+    <FunctionImport Name="sp_SuaSanPham">
+      <Parameter Name="MaSP" Mode="In" Type="String" />
+      <Parameter Name="TenSP" Mode="In" Type="String" />
+      <Parameter Name="GiaTien" Mode="In" Type="Single" />
+      <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+      <Parameter Name="DonViTinh" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ThemSanPham">
+      <Parameter Name="MaSP" Mode="In" Type="String" />
+      <Parameter Name="TenSP" Mode="In" Type="String" />
+      <Parameter Name="GiaTien" Mode="In" Type="Single" />
+      <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+      <Parameter Name="DonViTinh" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_TimKiemSanPhamTheoTen" ReturnType="Collection(QuanLySanPhamDBModel.sp_TimKiemSanPhamTheoTen_Result)">
+      <Parameter Name="ten" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_XoaSanPham">
+      <Parameter Name="MaSP" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_XuatDanhSachSanPham" ReturnType="Collection(QuanLySanPhamDBModel.sp_XuatDanhSachSanPham_Result)" />
+  </EntityContainer>
+  <ComplexType Name="sp_TimKiemSanPhamTheoTen_Result">
+    <Property Type="String" Name="MaSP" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenSP" Nullable="false" MaxLength="50" />
+    <Property Type="Single" Name="GiaTien" Nullable="false" />
+    <Property Type="Int32" Name="SoLuong" Nullable="false" />
+    <Property Type="String" Name="DonViTinh" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_XuatDanhSachSanPham_Result">
+    <Property Type="String" Name="MaSP" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenSP" Nullable="false" MaxLength="50" />
+    <Property Type="Single" Name="GiaTien" Nullable="false" />
+    <Property Type="Int32" Name="SoLuong" Nullable="false" />
+    <Property Type="String" Name="DonViTinh" Nullable="false" MaxLength="50" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,91 @@
+﻿<Window x:Class="DA_LTUD.NhapHD"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DA_LTUD"
+        mc:Ignorable="d"
+        Title="NhapHD" Height="400" Width="800" Loaded="Window_Loaded">
+    <DockPanel Background="AliceBlue">
+        <Label FontSize="20" HorizontalAlignment="Center" DockPanel.Dock="Top">Nhập Hóa Đơn</Label>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+            <Button Name="btadd" Margin="5" Padding="5" Click="btadd_Click">Add</Button>
+            <Button Name="btcancel" Margin="5" Padding="5" Click="btcancel_Click">Cancel</Button>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock>Tên Khách Hàng:</TextBlock>
+                <TextBox Name="tbtenkh" Width="150"></TextBox>
+                <TextBlock Margin="5, 0, 0, 0">Tên Địa Chỉ:</TextBlock>
+                <TextBox Name="tbdiachi" Width="150"></TextBox>
+                <TextBlock Margin="5, 0, 0, 0">SĐT:</TextBlock>
+                <TextBox Name="tbsdt" Width="100"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock>Ngày Đặt:</TextBlock>
+                <TextBox Name="tblngaydat" Width="150"></TextBox>
+                <TextBlock>Tình Trạng:</TextBlock>
+                <TextBlock Width="100" Name="tbltinhtrang"></TextBlock>
+            </StackPanel>
+            <DockPanel Height="195">
+                <DockPanel DockPanel.Dock="Left" Margin="10">
+                    <DockPanel DockPanel.Dock="Top">
+                        <TextBlock HorizontalAlignment="Left">Sản Phẩm</TextBlock>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <TextBlock>Search by Name</TextBlock>
+                            <TextBox Width="100" Name="tbfilterproduct" TextChanged="tbfilterproduct_TextChanged"></TextBox>
+                        </StackPanel>
+                    </DockPanel>
+                    <DataGrid Padding="5" Width="300" Name="datagridsp" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Mã SP" Binding="{Binding Id}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Tên" Binding="{Binding Name}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Giá($/kg)" Binding="{Binding Gia}" Width="*"></DataGridTextColumn>
+                            <DataGridTemplateColumn Width="0.5*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button BorderThickness="0" Background="White" Name="add" Click="add_Click">
+                                            <Image Source="Images\giohang.png" Width="25" Height="25" RenderOptions.BitmapScalingMode="NearestNeighbor"></Image>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Right" Margin="10">
+                    <TextBlock DockPanel.Dock="Top">Giỏ Hàng</TextBlock>
+                    <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock>Tổng Tiền Hóa Đơn:</TextBlock>
+                        <TextBlock Name="tbltongtienhoadon"></TextBlock>
+                    </StackPanel>
+                    <DataGrid Width="370" Name="datagridgihang" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Mã Sản Phẩm" Binding="{Binding IdProduct}" Width="*" IsReadOnly="True"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Giá($/kg)" Binding="{Binding GiaBan}" Width="*" IsReadOnly="True"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Số Lượng" Width="*">
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate >
+                                    <TextBox Name="tbSL" TextChanged="tbSL_TextChanged" Text="{Binding Path=SoLuong,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ></TextBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="Tổng Giá" Binding="{Binding TongTien}" Width="*" IsReadOnly="True"></DataGridTextColumn>
+                            <DataGridTemplateColumn Width="0.5*">
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate >
+                                        <Button BorderThickness="0" Background="White" Name="btndeleteCT" Click="btndeleteCT_Click">
+                                            <Image Source="Images\delete.png" Height="17" Width="17"></Image>
+                                        </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </DockPanel>
+            
+            
+        </StackPanel>
+    </DockPanel>
+</Window>

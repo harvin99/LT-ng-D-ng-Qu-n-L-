@@ -1,0 +1,96 @@
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\bin\Debug\DA_LTUD.exe.config
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\bin\Debug\DA_LTUD.exe
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\bin\Debug\DA_LTUD.pdb
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\DA_LTUD.csprojResolveAssemblyReference.cache
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\ConfirmWindow.g.cs
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\EditSP.g.cs
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\MainWindow.g.cs
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\NhapSP.g.cs
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\App.g.cs
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\DA_LTUD_MarkupCompile.cache
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\DA_LTUD_MarkupCompile.lref
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\ConfirmWindow.baml
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\EditSP.baml
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\MainWindow.baml
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\NhapSP.baml
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\DA_LTUD.g.resources
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\DA_LTUD.Properties.Resources.resources
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\DA_LTUD.csproj.GenerateResource.Cache
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\DA_LTUD.exe
+C:\Users\Sang\Desktop\Lesson\LTUD\DA_LTUD\DA_LTUD\obj\Debug\DA_LTUD.pdb
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\bin\Debug\DA_LTUD.exe.config
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\DA_LTUD.exe
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\DA_LTUD.pdb
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\bin\Debug\DA_LTUD.exe
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\bin\Debug\DA_LTUD.pdb
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\DA_LTUD.csprojResolveAssemblyReference.cache
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\ConfirmWindow.g.cs
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\EditSP.g.cs
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\MainWindow.g.cs
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\NhapSP.g.cs
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\App.g.cs
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\DA_LTUD_MarkupCompile.cache
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\DA_LTUD_MarkupCompile.lref
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\ConfirmWindow.baml
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\EditSP.baml
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\MainWindow.baml
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\NhapSP.baml
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\DA_LTUD.g.resources
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\DA_LTUD.Properties.Resources.resources
+C:\Users\Sang\Desktop\Lesson\LTUD\DA\QLSanPham\DA_LTUD\obj\Debug\DA_LTUD.csproj.GenerateResource.Cache
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\bin\Debug\DA_LTUD.exe.config
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\DA_LTUD.exe
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\DA_LTUD.pdb
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\bin\Debug\DA_LTUD.exe
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\bin\Debug\DA_LTUD.pdb
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\DA_LTUD.csprojResolveAssemblyReference.cache
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\ConfirmWindow.g.cs
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\EditSP.g.cs
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\MainWindow.g.cs
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\NhapSP.g.cs
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\App.g.cs
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\DA_LTUD_MarkupCompile.cache
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\DA_LTUD_MarkupCompile.lref
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\ConfirmWindow.baml
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\EditSP.baml
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\MainWindow.baml
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\NhapSP.baml
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\DA_LTUD.g.resources
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\DA_LTUD.Properties.Resources.resources
+E:\code hk1-nam3\udql\do an\Project_LTUDQL1\QLSP\DA_LTUD\obj\Debug\DA_LTUD.csproj.GenerateResource.Cache
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\DA_LTUD.exe.config
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\DA_LTUD.csprojResolveAssemblyReference.cache
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\ConfirmWindow.g.cs
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\EditSP.g.cs
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\MainWindow.g.cs
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\NhapSP.g.cs
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\App.g.cs
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\DA_LTUD_Content.g.cs
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\DA_LTUD_MarkupCompile.cache
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\DA_LTUD_MarkupCompile.lref
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\ProductADO.Context.tt
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\ProductADO.tt
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\Product.cs
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\ProductADO.Context.cs
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\ProductADO.cs
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\ProductADO.Designer.cs
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\ProductADO.edmx.diagram
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\QuanLyNongSanDB.mdf
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\QuanLyNongSanDB_log.ldf
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\DA_LTUD.exe
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\DA_LTUD.pdb
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\Aspose.Cells.dll
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\EntityFramework.dll
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\EntityFramework.xml
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\ConfirmWindow.baml
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\EditSP.baml
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\MainWindow.baml
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\NhapSP.baml
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\DA_LTUD.g.resources
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\DA_LTUD.Properties.Resources.resources
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\DA_LTUD.csproj.GenerateResource.Cache
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\DA_LTUD.exe
+C:\Users\Sang\Desktop\Project_LTUDQL1-master\Project_LTUDQL1-master\QLSP\DA_LTUD\obj\Debug\DA_LTUD.pdb

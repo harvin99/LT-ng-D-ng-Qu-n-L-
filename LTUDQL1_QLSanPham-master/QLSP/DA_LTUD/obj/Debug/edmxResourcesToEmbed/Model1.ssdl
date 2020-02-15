@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLySanPhamDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QuanLySanPhamDB.dbo.SanPham' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="MaSP" />
+      <PropertyRef Name="TenSP" />
+      <PropertyRef Name="GiaTien" />
+      <PropertyRef Name="SoLuong" />
+      <PropertyRef Name="DonViTinh" />
+    </Key>
+    <Property Name="MaSP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenSP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GiaTien" Type="real" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="DonViTinh" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Function Name="sp_SuaSanPham" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaSP" Type="varchar" Mode="In" />
+    <Parameter Name="TenSP" Type="nvarchar" Mode="In" />
+    <Parameter Name="GiaTien" Type="real" Mode="In" />
+    <Parameter Name="SoLuong" Type="int" Mode="In" />
+    <Parameter Name="DonViTinh" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ThemSanPham" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaSP" Type="varchar" Mode="In" />
+    <Parameter Name="TenSP" Type="nvarchar" Mode="In" />
+    <Parameter Name="GiaTien" Type="real" Mode="In" />
+    <Parameter Name="SoLuong" Type="int" Mode="In" />
+    <Parameter Name="DonViTinh" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_TimKiemSanPhamTheoTen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ten" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_XoaSanPham" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaSP" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_XuatDanhSachSanPham" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="QuanLySanPhamDBModelStoreContainer">
+    <EntitySet Name="SanPham" EntityType="Self.SanPham" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SanPham].[MaSP] AS [MaSP], 
+    [SanPham].[TenSP] AS [TenSP], 
+    [SanPham].[GiaTien] AS [GiaTien], 
+    [SanPham].[SoLuong] AS [SoLuong], 
+    [SanPham].[DonViTinh] AS [DonViTinh]
+    FROM [dbo].[SanPham] AS [SanPham]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

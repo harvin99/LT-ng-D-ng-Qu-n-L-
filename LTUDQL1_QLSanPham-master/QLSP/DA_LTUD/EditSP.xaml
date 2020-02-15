@@ -1,0 +1,41 @@
+﻿<Window x:Class="DA_LTUD.EditSP"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DA_LTUD"
+        mc:Ignorable="d"
+        Title="EditSP" Height="350" Width="300" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:ImageFullPathConverter x:Key="converter"/>
+    </Window.Resources>
+    <DockPanel Background="AliceBlue">
+        <Label FontSize="20" HorizontalAlignment="Center" DockPanel.Dock="Top">Thông Tin Sản Phẩm</Label>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+            <Button Margin="5" Padding="5" Name="btapply" Click="btapply_Click" IsEnabled="False">Apply</Button>
+            <Button Margin="5" Padding="5" Name="btedit" Click="btedit_Click">Edit</Button>
+            <Button Margin="5" Padding="5" Name="btdelete" Click="btdelete_Click">Delete</Button>
+        </StackPanel>
+        <StackPanel Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Height="auto" Name="stpShow">
+                <Image Height="70" Width="100" Margin="5" Source="{Binding Image,Converter={StaticResource converter}}"></Image>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="5">Tên Sản Phẩm:</TextBlock>
+                    <TextBlock Name="tblnameprd" VerticalAlignment="Center" Text="{Binding Path=Name}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="5">Gía Sản Phẩm:</TextBlock>
+                    <TextBlock Name="tblGiaprd" VerticalAlignment="Center" Text="{Binding Path=Gia}"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Height="0" Name="stpEdit">
+                <Image Height="70" Width="100" Margin="5" Source="{Binding Path=Image}"></Image>
+                <TextBlock Margin="5">Tên Sản Phẩm:</TextBlock>
+                <TextBox Name="tbnameprd" Width="200" Margin="5" Text="{Binding Path=Name}"></TextBox>
+                <TextBlock Margin="5">Gía Sản Phẩm:</TextBlock>
+                <TextBox Name="tbgiaprd" Width="200" Margin="5" Text="{Binding Path=Gia}"></TextBox>
+                <Button Name="btchoosefile" Margin="5" Width="80" Click="btchoosefile_Click">Choose image</Button>
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>

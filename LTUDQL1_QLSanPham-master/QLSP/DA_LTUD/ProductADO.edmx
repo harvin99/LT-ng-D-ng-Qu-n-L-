@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QuanLyNongSanDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenKH" Type="varchar" MaxLength="50" />
+          <Property Name="DiaChiKH" Type="varchar" MaxLength="100" />
+          <Property Name="SDT" Type="varchar" MaxLength="20" />
+          <Property Name="NgayTao" Type="varchar" MaxLength="20" />
+          <Property Name="NgayUpdate" Type="varchar" MaxLength="20" />
+          <Property Name="TongTien" Type="float" />
+          <Property Name="IdStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="InvoiceDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdInvoice" Type="int" />
+          <Property Name="IdProduct" Type="int" />
+          <Property Name="SoLuong" Type="int" />
+          <Property Name="GiaBan" Type="float" />
+          <Property Name="TongTien" Type="float" />
+        </EntityType>
+        <EntityType Name="InvoiceStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Key" Type="int" />
+          <Property Name="Value" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gia" Type="real" />
+          <Property Name="Image" Type="text" />
+        </EntityType>
+        <Association Name="FK_Invoice_ToTable">
+          <End Role="InvoiceStatus" Type="Self.InvoiceStatus" Multiplicity="0..1" />
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InvoiceStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="IdStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvoiceDetail_ToTable">
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="0..1" />
+          <End Role="InvoiceDetail" Type="Self.InvoiceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvoiceDetail">
+              <PropertyRef Name="IdInvoice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvoiceDetail_ToTable_1">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="InvoiceDetail" Type="Self.InvoiceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvoiceDetail">
+              <PropertyRef Name="IdProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QuanLyNongSanDBModelStoreContainer">
+          <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvoiceDetail" EntityType="Self.InvoiceDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvoiceStatus" EntityType="Self.InvoiceStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Invoice_ToTable" Association="Self.FK_Invoice_ToTable">
+            <End Role="InvoiceStatus" EntitySet="InvoiceStatus" />
+            <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvoiceDetail_ToTable" Association="Self.FK_InvoiceDetail_ToTable">
+            <End Role="Invoice" EntitySet="Invoice" />
+            <End Role="InvoiceDetail" EntitySet="InvoiceDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvoiceDetail_ToTable_1" Association="Self.FK_InvoiceDetail_ToTable_1">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="InvoiceDetail" EntitySet="InvoiceDetail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QuanLyNongSanDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gia" Type="Single" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="InvoiceDetails" Relationship="QuanLyNongSanDBModel.FK_InvoiceDetail_ToTable_1" FromRole="Product" ToRole="InvoiceDetail" />
+        </EntityType>
+        <EntityContainer Name="QuanLyNongSanDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Invoices" EntityType="QuanLyNongSanDBModel.Invoice" />
+          <EntitySet Name="InvoiceStatus" EntityType="QuanLyNongSanDBModel.InvoiceStatu" />
+          <AssociationSet Name="FK_Invoice_ToTable" Association="QuanLyNongSanDBModel.FK_Invoice_ToTable">
+            <End Role="InvoiceStatu" EntitySet="InvoiceStatus" />
+            <End Role="Invoice" EntitySet="Invoices" />
+          </AssociationSet>
+          <EntitySet Name="InvoiceDetails" EntityType="QuanLyNongSanDBModel.InvoiceDetail" />
+          <AssociationSet Name="FK_InvoiceDetail_ToTable" Association="QuanLyNongSanDBModel.FK_InvoiceDetail_ToTable">
+            <End Role="Invoice" EntitySet="Invoices" />
+            <End Role="InvoiceDetail" EntitySet="InvoiceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvoiceDetail_ToTable_1" Association="QuanLyNongSanDBModel.FK_InvoiceDetail_ToTable_1">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="InvoiceDetail" EntitySet="InvoiceDetails" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DiaChiKH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NgayTao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NgayUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TongTien" Type="Double" />
+          <Property Name="IdStatus" Type="Int32" />
+          <NavigationProperty Name="InvoiceStatu" Relationship="QuanLyNongSanDBModel.FK_Invoice_ToTable" FromRole="Invoice" ToRole="InvoiceStatu" />
+          <NavigationProperty Name="InvoiceDetails" Relationship="QuanLyNongSanDBModel.FK_InvoiceDetail_ToTable" FromRole="Invoice" ToRole="InvoiceDetail" />
+        </EntityType>
+        <EntityType Name="InvoiceStatu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Key" Type="Int32" />
+          <Property Name="Value" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Invoices" Relationship="QuanLyNongSanDBModel.FK_Invoice_ToTable" FromRole="InvoiceStatu" ToRole="Invoice" />
+        </EntityType>
+        <Association Name="FK_Invoice_ToTable">
+          <End Type="QuanLyNongSanDBModel.InvoiceStatu" Role="InvoiceStatu" Multiplicity="0..1" />
+          <End Type="QuanLyNongSanDBModel.Invoice" Role="Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InvoiceStatu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="IdStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="InvoiceDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdInvoice" Type="Int32" />
+          <Property Name="IdProduct" Type="Int32" />
+          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="GiaBan" Type="Double" />
+          <Property Name="TongTien" Type="Double" />
+          <NavigationProperty Name="Invoice" Relationship="QuanLyNongSanDBModel.FK_InvoiceDetail_ToTable" FromRole="InvoiceDetail" ToRole="Invoice" />
+          <NavigationProperty Name="Product" Relationship="QuanLyNongSanDBModel.FK_InvoiceDetail_ToTable_1" FromRole="InvoiceDetail" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK_InvoiceDetail_ToTable">
+          <End Type="QuanLyNongSanDBModel.Invoice" Role="Invoice" Multiplicity="0..1" />
+          <End Type="QuanLyNongSanDBModel.InvoiceDetail" Role="InvoiceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvoiceDetail">
+              <PropertyRef Name="IdInvoice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvoiceDetail_ToTable_1">
+          <End Type="QuanLyNongSanDBModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="QuanLyNongSanDBModel.InvoiceDetail" Role="InvoiceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvoiceDetail">
+              <PropertyRef Name="IdProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QuanLyNongSanDBModelStoreContainer" CdmEntityContainer="QuanLyNongSanDBEntities">
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="QuanLyNongSanDBModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Gia" ColumnName="Gia" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoices">
+            <EntityTypeMapping TypeName="QuanLyNongSanDBModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="IdStatus" ColumnName="IdStatus" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="NgayUpdate" ColumnName="NgayUpdate" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="DiaChiKH" ColumnName="DiaChiKH" />
+                <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvoiceStatus">
+            <EntityTypeMapping TypeName="QuanLyNongSanDBModel.InvoiceStatu">
+              <MappingFragment StoreEntitySet="InvoiceStatus">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvoiceDetails">
+            <EntityTypeMapping TypeName="QuanLyNongSanDBModel.InvoiceDetail">
+              <MappingFragment StoreEntitySet="InvoiceDetail">
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+                <ScalarProperty Name="IdInvoice" ColumnName="IdInvoice" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
